@@ -1,15 +1,54 @@
 .header {
-  height: 30vh;
+  height: 35vh;
   width: 100vw;
   background-image: url('/public/images/pattern-bg-desktop.png');
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  position: relative;
 }
 
 .header h1 {
   color: white;
   font-weight: 400;
+}
+
+.header__data {
+  display: flex;
+  background-color: white;
+  padding: 2.5rem 1.5rem;
+  gap: 3rem;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -5rem;
+  z-index: 1001;
+}
+
+.header__isp, .header__location, .header__timezone {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem;
+  border-left: 1px solid hsl(0, 2%, 76%);
+  flex: 1;
+}
+
+.header__ip {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem;
+} 
+
+.header h2 {
+  color:  hsl(0, 0%, 59%);
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: 1px;
+}
+
+.header span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
 }
 
