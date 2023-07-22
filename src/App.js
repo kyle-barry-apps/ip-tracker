@@ -1,12 +1,12 @@
 import './App.css';
-import { SearchProvider } from './contexts/SearchContext';
 import { MapContainer, TileLayer } from 'react-leaflet';
+import Header from './components/Header/Header';
 import 'leaflet/dist/leaflet.css'
-import Header from './Header/Header';
 
 function App() {
+
   return (
-    <SearchProvider>
+    <> 
       <Header />
       <MapContainer center={[48.8566, 2.3522]} zoom={20}>
         <TileLayer 
@@ -14,7 +14,7 @@ function App() {
           url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
       </MapContainer>
-    </SearchProvider>
+    </>
   );
 }
 
