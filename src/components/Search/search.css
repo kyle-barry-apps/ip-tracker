@@ -3,6 +3,7 @@
   align-items: center;
   width: 32rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 .search input {
@@ -12,6 +13,24 @@
   border: none;
   flex: 12;
   font-size: 16px;
+}
+
+.search__error {
+  display: none;
+}
+
+.search__error.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .5rem;
+  width: 32rem;
+  background-color: rgb(252, 172, 172);
+  padding: .5rem;
+  font-size: .8rem;
+  border-radius: 5px;
+  color: red;
+  z-index: 1200;
 }
 
 .search input::placeholder {

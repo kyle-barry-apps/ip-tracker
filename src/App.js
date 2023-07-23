@@ -1,19 +1,35 @@
-import './App.css';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { useContext, useEffect } from 'react';
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import { CoordinatesContext } from './contexts/CoordinatesContext';
 import Header from './components/Header/Header';
+import MarkerPosition from './components/MarkerPosition';
+import icon from './icon'
 import 'leaflet/dist/leaflet.css'
+import './App.css';
 
 function App() {
+
+  const { coordinates } = useContext(CoordinatesContext)
+
+  // useEffect(() => {
+  //   map.flyTo(coordinates, 13, {
+  //     animate: true,
+  //   }, [map, coordinates])
+  // })
 
   return (
     <> 
       <Header />
-      <MapContainer center={[48.8566, 2.3522]} zoom={20}>
-        <TileLayer 
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
-        />
-      </MapContainer>
+      {coordinates.length>0 && 
+      <>
+        <MapContainer center={coordinates} zoom={20} scrollWheelZoom={false}>
+          <TileLayer
+           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+            url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
+          />
+          <MarkerPosition />
+        </MapContainer>
+      </>}
     </>
   );
 }
