@@ -53,3 +53,62 @@
   margin-top: 1rem;
 }
 
+@media (max-width: 1200px) {
+  .header {
+    padding: .5rem;
+  }
+
+  .header span {
+    font-size: 1.1rem;
+  }
+
+  .header__data {
+    padding: 1rem 1rem;
+  }
+  .header__ip {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .header__data {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    bottom: -12rem;
+    width: 80vw;
+  } 
+
+  .header__isp, .header__location, .header__timezone {
+    border-left: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .header h1 {
+    margin-top: 2rem;
+  }
+
+  .header h2 {
+    font-size: .7rem;
+  }
+
+  .header span {
+    font-size: 1rem;
+  }
+
+  .header__data {
+    width: 80vw;
+    bottom: -10rem;
+    gap: .7rem;
+  } 
+
+  .header__isp, .header__location, .header__timezone, .header__ip {
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0rem;
+  }
+
+
+}

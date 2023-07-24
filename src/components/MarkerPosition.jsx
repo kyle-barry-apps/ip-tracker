@@ -11,7 +11,7 @@ const MarkerPosition = () => {
   const map = useMap()
 
   useEffect(() => {
-    map.flyTo(coordinates, 13, {
+    map.flyTo(coordinates, 15, {
       animate: true,
     }, [map, coordinates])
   })

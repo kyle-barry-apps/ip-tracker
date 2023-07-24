@@ -13,6 +13,7 @@ const Header = () => {
   const ipURL = 'http://localhost:3001/ip?ip=' + searchTerm.trim()
 
 
+
   useEffect(() => {
     fetch(initialURL, {
       method: 'GET', 
