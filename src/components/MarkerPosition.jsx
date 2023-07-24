@@ -19,9 +19,6 @@ const MarkerPosition = () => {
   return (
     <> 
     <Marker icon={icon} position={coordinates}>
-      <Popup>
-        A popup
-      </Popup>
     </Marker>
     </>
   )
