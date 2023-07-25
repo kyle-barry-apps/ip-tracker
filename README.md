@@ -1,6 +1,6 @@
 # IP address tracker
 
-Live URL: (ready shortly)
+[(Live URL:](https://64c012644b52c808d8827df6--flourishing-parfait-5b0248.netlify.app/)
 
 ## Welcome! 👋
 
