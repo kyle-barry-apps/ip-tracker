@@ -4,15 +4,13 @@ import { SearchContext } from '../../contexts/SearchContext'
 import { CoordinatesContext } from '../../contexts/CoordinatesContext';
 import './header.css'
 
-const Header = () => {
+const Header = ({ userIP }) => {
 
   const [ipData, setIPData] = useState()
   const { searchTerm } = useContext(SearchContext)
   const { coordinates, setCoordinates } = useContext(CoordinatesContext)
-  const initialURL = 'http://localhost:3001'
-  const ipURL = 'http://localhost:3001/ip?ip=' + searchTerm.trim()
-
-
+  const initialURL = 'https://ip-backend-proxy.onrender.com/ip?ip=' + userIP
+  const ipURL = 'https://ip-backend-proxy.onrender.com/ip?ip=' + searchTerm.trim()
 
   useEffect(() => {
     fetch(initialURL, {

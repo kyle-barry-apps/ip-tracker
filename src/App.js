@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
 import { CoordinatesContext } from './contexts/CoordinatesContext';
 import Header from './components/Header/Header';
@@ -9,11 +9,29 @@ import './App.css';
 
 function App() {
 
+  const [userIP, setUserIP] = useState('')
+
+  useEffect(() => {
+    fetch('https://api.ipify.org/?format=json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setUserIP(data.ip);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }, []);
+
   const { coordinates } = useContext(CoordinatesContext)
 
   return (
     <> 
-      <Header />
+      <Header userIP={userIP} />
       {coordinates.length>0 && 
       <>
         <MapContainer center={coordinates} zoom={15} scrollWheelZoom={false}>
